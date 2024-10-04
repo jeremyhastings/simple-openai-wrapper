@@ -6,7 +6,6 @@ module Simple
   module Openai
     # Test class for the Wrapper functionality.
     class TestWrapper < Minitest::Test
-
       # Test to ensure that the Wrapper module has a version number.
       def test_that_it_has_a_version_number
         refute_nil ::Simple::Openai::VERSION

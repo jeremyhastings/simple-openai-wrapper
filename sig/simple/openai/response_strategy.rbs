@@ -1,0 +1,7 @@
+module Simple
+  module Openai
+    class ResponseStrategy
+      def render_response: (untyped response) -> untyped
+    end
+  end
+end

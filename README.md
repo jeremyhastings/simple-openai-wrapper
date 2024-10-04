@@ -44,6 +44,65 @@ bin/console_app
 
 This will start the console application, which provides a simple interface for experimenting with the gem's functionality.
 
+### Using the Wrapper
+
+To generate text using the wrapper:
+
+```ruby
+require 'simple/openai/wrapper'
+
+wrapper = Simple::Openai::Wrapper.new("your_openai_api_key")
+response = wrapper.generate_text("What is the weather like today?")
+puts response
+```
+
+### Using Response Strategies
+
+The gem provides a flexible way to handle responses by implementing different response strategies.
+
+#### SimpleTextResponseStrategy
+
+A basic strategy that extracts and prints the generated text from the OpenAI API response.
+
+```ruby
+require 'simple/openai/simple_text_response_strategy'
+
+example_response = {
+  "choices" => [
+    {
+      "message" => {
+        "content" => "This is generated text from OpenAI."
+      }
+    }
+  ]
+}
+
+strategy = Simple::Openai::SimpleTextResponseStrategy.new
+strategy.render_response(example_response)
+```
+
+## Running the Tests
+
+To run all the tests for this gem, follow these steps:
+
+1. Ensure all dependencies are installed:
+
+    ```bash
+    bundle install
+    ```
+
+2. Run the tests using Rake:
+
+    ```bash
+    rake test
+    ```
+
+If you are using Bundler, you can also use:
+
+```bash
+bundle exec rake test
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

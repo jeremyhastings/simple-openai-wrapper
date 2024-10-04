@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "response_renderer"
+require_relative "simple_text_response_strategy"
 require_relative "wrapper"
 
 module Simple
@@ -15,6 +17,7 @@ module Simple
         puts "Welcome to Simple OpenAI Wrapper Console Application!"
 
         wrapper = Simple::Openai::Wrapper.new
+        renderer = Simple::Openai::ResponseRenderer.new
 
         loop do
           puts "\nMenu:"
@@ -27,7 +30,9 @@ module Simple
           when "1"
             prompt = prompt_user_for_text
             response = wrapper.generate_text(prompt)
-            display_response(response)
+            strategy = Simple::Openai::SimpleTextResponseStrategy.new
+            renderer.set_strategy(strategy)
+            renderer.render_response(response)
           when "EXIT", "exit"
             puts "Shutting down the application. Goodbye!"
             break
@@ -42,19 +47,6 @@ module Simple
       def self.prompt_user_for_text
         print "Enter your prompt: "
         gets.chomp
-      end
-
-      # Displays the generated text response from the OpenAI API.
-      # If the response contains valid generated text, it prints it.
-      # Otherwise, it prints an error message along with the full response.
-      # @param response [Hash] the response from the OpenAI API.
-      def self.display_response(response)
-        if response && response["choices"] && response["choices"].first
-          haiku = response["choices"].first["message"]["content"]
-          puts "Generated Text: #{haiku}"
-        else
-          puts "Failed to generate text. Response: #{response}"
-        end
       end
     end
   end
