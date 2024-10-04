@@ -1,0 +1,9 @@
+module Simple
+  module Openai
+    class Main
+      def self.display_response: -> untyped
+      def self.prompt_user_for_text: -> untyped
+      def self.run: -> untyped
+    end
+  end
+end

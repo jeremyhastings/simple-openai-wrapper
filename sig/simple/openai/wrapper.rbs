@@ -1,8 +1,12 @@
 module Simple
   module Openai
-    module Wrapper
-      VERSION: String
+    VERSION: String
+
+    class Wrapper
+      OPENAI_API_URL: String
+      @api_key: String
       # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+
     end
   end
 end

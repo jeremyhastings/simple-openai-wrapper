@@ -4,7 +4,7 @@ require_relative "lib/simple/openai/wrapper/version"
 
 Gem::Specification.new do |spec|
   spec.name = "simple-openai-wrapper"
-  spec.version = Simple::Openai::Wrapper::VERSION
+  spec.version = Simple::Openai::VERSION
   spec.authors = ["jeremyhastings"]
   spec.email = ["jeremy.hastings@mac.com"]
 

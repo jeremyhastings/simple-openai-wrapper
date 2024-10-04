@@ -1,0 +1,3 @@
+class ConsoleAppTest
+  def test_console_app_runs: -> untyped
+end

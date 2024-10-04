@@ -2,8 +2,6 @@
 
 module Simple
   module Openai
-    module Wrapper
-      VERSION = "0.1.0"
-    end
+    VERSION = "0.1.1" unless defined? Simple::Openai::VERSION
   end
 end
