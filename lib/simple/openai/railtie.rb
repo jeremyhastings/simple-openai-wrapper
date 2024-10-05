@@ -7,7 +7,6 @@ require "rails/railtie"
 # hooks to extend Rails capabilities in an application or engine.
 module Simple
   module Openai
-
     # The Railtie class for the Simple::Openai module.
     #
     # Railties are a major component used in the initialization process of a Rails application.

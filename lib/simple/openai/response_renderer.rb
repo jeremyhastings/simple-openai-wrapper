@@ -5,6 +5,8 @@ module Simple
     # The ResponseRenderer class is responsible for rendering the response using a specific strategy.
     # It allows for dynamic changes to the strategy used for rendering the response.
     class ResponseRenderer
+      attr_reader :strategy
+
       # Initializes the ResponseRenderer with an optional strategy.
       # If no strategy is provided, it will need to be set before rendering a response.
       #

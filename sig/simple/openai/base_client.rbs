@@ -1,0 +1,8 @@
+module Simple
+  module Openai
+    class BaseClient
+      @api_key: String
+      def api_key: -> String
+    end
+  end
+end

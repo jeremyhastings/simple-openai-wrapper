@@ -4,7 +4,6 @@ module Simple
 
     class Wrapper
       OPENAI_API_URL: String
-      @api_key: String
       def generate_text: (String) -> Hash[String, untyped]
     end
   end
