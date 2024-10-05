@@ -2,6 +2,7 @@
 
 require "minitest/autorun"
 require "open3"
+require_relative "test_helper"
 
 # This test class verifies the behavior of the Simple OpenAI Wrapper Console Application.
 # It ensures that when the console application runs, it displays the appropriate menu,

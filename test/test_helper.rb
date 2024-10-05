@@ -3,8 +3,11 @@
 # Load the library's path into the $LOAD_PATH for easy requiring
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 
-# Load the dotenv gem to auto-load environment variables from .env files
-require "dotenv/load"
+require "dotenv"
+Dotenv.load(".env")
+
+# Or directly set in code if necessary
+ENV["OPENAI_API_KEY"] ||= "test_api_key"
 
 # Load the Simple OpenAI Wrapper library
 require "simple/openai/wrapper"
