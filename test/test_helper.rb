@@ -4,7 +4,7 @@
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 
 # Load the dotenv gem to auto-load environment variables from .env files
-# require "dotenv/load"
+require "dotenv/load"
 
 # Load the Simple OpenAI Wrapper library
 require "simple/openai/wrapper"
