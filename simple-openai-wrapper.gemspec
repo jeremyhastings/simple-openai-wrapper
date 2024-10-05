@@ -35,8 +35,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Runtime dependencies
-  spec.add_dependency "httparty", "~> 0.18" # Example HTTP client
-  spec.add_dependency "json", "~> 2.5"      # JSON parsing if not included in stdlib
+  spec.add_dependency "dotenv", "~> 3.1.4"
+  spec.add_dependency "httparty", "~> 0.18"
+  spec.add_dependency "json", "~> 2.5"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

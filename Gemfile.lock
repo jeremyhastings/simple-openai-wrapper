@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     simple-openai-wrapper (0.1.1)
+      dotenv (~> 3.1.4)
       httparty (~> 0.18)
       json (~> 2.5)
 
@@ -86,7 +87,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  dotenv
+  dotenv (~> 3.1.4)
   minitest (~> 5.16)
   mutex_m
   rake (~> 13.0)
