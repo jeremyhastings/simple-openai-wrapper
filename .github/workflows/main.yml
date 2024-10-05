@@ -23,6 +23,13 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
+
+    - name: Print Environment Variables
+      run: printenv | sort
+
+    - name: Print OPENAI_API_KEY
+      run: echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}"
+
     - name: Run the default task
       run: bundle exec rake
       env:

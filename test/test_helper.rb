@@ -4,7 +4,7 @@
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 
 require "dotenv"
-Dotenv.load(".env")
+Dotenv.load(".env.test")
 
 # Or directly set in code if necessary
 ENV["OPENAI_API_KEY"] ||= "test_api_key"
@@ -14,3 +14,13 @@ require "simple/openai/wrapper"
 
 # Load Minitest and WebMock for testing
 require "minitest/autorun"
+
+# A setup method to ensure the environment variable is set for every test
+module Minitest
+  class Test
+    def setup
+      super
+      ENV["OPENAI_API_KEY"] ||= "test_api_key"
+    end
+  end
+end
