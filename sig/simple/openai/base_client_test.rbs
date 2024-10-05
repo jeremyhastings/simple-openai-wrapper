@@ -1,0 +1,5 @@
+class BaseClientTest
+  @valid_api_key: String
+
+  def setup: -> String
+end

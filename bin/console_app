@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Entry point for the Simple OpenAI Wrapper Console Application.
+# This script initializes and runs the Main class, which provides an interactive
+# menu for generating text using the OpenAI API or exiting the application.
+
+require_relative "../lib/simple/openai/main"
+
+Simple::Openai::Main.run

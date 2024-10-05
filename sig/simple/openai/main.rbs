@@ -1,0 +1,8 @@
+module Simple
+  module Openai
+    class Main
+      def self.prompt_user_for_text: -> String
+      def self.run: -> untyped
+    end
+  end
+end

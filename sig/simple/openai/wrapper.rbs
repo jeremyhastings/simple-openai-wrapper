@@ -1,8 +1,10 @@
 module Simple
   module Openai
-    module Wrapper
-      VERSION: String
-      # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+    VERSION: String
+
+    class Wrapper
+      OPENAI_API_URL: String
+      def generate_text: (String) -> Hash[String, untyped]
     end
   end
 end
