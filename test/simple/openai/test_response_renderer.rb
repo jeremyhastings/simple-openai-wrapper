@@ -37,13 +37,13 @@ class ResponseRendererTest < Minitest::Test
 
   def test_render_response_with_strategy
     strategy.expect :render_response, nil, [{ key: "value" }]
-    response_renderer.set_strategy(strategy)
+    response_renderer.apply_strategy(strategy)
     response_renderer.render_response({ key: "value" })
   end
 
   def test_set_strategy
     new_strategy = Minitest::Mock.new
-    response_renderer.set_strategy(new_strategy)
+    response_renderer.apply_strategy(new_strategy)
     assert_equal new_strategy.__id__, response_renderer.strategy.__id__
 
     new_strategy.verify

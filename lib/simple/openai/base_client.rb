@@ -16,7 +16,7 @@ module Simple
       #
       # @param [String, nil] api_key The API key for authentication. Default is fetched from ENV["OPENAI_API_KEY"].
       # @raise [Error] If the API key is missing.
-      def initialize(api_key = ENV["OPENAI_API_KEY"])
+      def initialize(api_key = ENV.fetch("OPENAI_API_KEY", nil))
         raise Error, "API key is missing" unless api_key
 
         @api_key = api_key
@@ -26,7 +26,7 @@ module Simple
       #
       # @return [String] The API key.
       def api_key
-        @api_key ||= ENV["OPENAI_API_KEY"]
+        @api_key ||= ENV.fetch("OPENAI_API_KEY", nil)
       end
     end
   end

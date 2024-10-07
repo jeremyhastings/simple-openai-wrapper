@@ -8,6 +8,7 @@ require_relative "test_helper"
 # It ensures that when the console application runs, it displays the appropriate menu,
 # handles user input correctly, and exits gracefully when the 'EXIT' command is issued.
 class ConsoleAppTest < Minitest::Test
+  # rubocop:disable Metrics/MethodLength
   def test_console_app_runs_and_interacts
     # Using Open3.popen3 to interact with the running console application
     Open3.popen3("./bin/console_app") do |stdin, stdout, stderr, wait_thr|
@@ -33,5 +34,6 @@ class ConsoleAppTest < Minitest::Test
       # Ensure we see a goodbye message
       assert_includes output, "Shutting down the application. Goodbye!"
     end
+    # rubocop:enable Metrics/MethodLength
   end
 end

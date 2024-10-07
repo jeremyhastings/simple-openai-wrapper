@@ -13,6 +13,7 @@ class SimpleTextResponseStrategyTest < Minitest::Test
     @strategy ||= Simple::Openai::SimpleTextResponseStrategy.new
   end
 
+  # rubocop:disable Metrics/MethodLength
   def test_render_response_with_proper_response
     response = {
       "choices" => [
@@ -28,6 +29,7 @@ class SimpleTextResponseStrategyTest < Minitest::Test
       strategy.render_response(response)
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   def test_render_response_with_improper_response
     response = { "choices" => [] }

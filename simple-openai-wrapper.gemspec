@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.email = ["jeremy.hastings@mac.com"]
 
   spec.summary = "Simple wrapper for interacting with OpenAI's API."
-  spec.description = "This gem provides a simple wrapper for interacting with OpenAI's API, useful for Ruby on Rails applications or standalone console applications."
+  spec.description = "This gem provides a simple wrapper for interacting with OpenAI's API, useful for Ruby on Rails
+                      applications or standalone console applications."
   spec.homepage = "https://github.com/jeremyhastings/simple-openai-wrapper/"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
@@ -40,4 +41,5 @@ Gem::Specification.new do |spec|
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
+  spec.metadata["rubygems_mfa_required"] = "true"
 end

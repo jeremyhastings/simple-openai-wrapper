@@ -61,6 +61,8 @@ class MainTest < Minitest::Test
     assert_match("Welcome to Simple OpenAI Wrapper Console Application!", output.read)
   end
 
+  # rubocop:disable Metrics/AbcSize
+  # rubocop:disable Metrics/MethodLength
   def test_generate_text_option
     input = StringIO.new("1\nHello, world!\nEXIT\n")
     output = StringIO.new
@@ -68,7 +70,7 @@ class MainTest < Minitest::Test
     $stdout = output
 
     wrapper.expect :generate_text, { "choices" => [{ "text" => "Hello response!" }] }, ["Hello, world!"]
-    renderer.expect :set_strategy, nil, [strategy]
+    renderer.expect :apply_strategy, nil, [strategy]
     renderer.expect :render_response, nil, [{ "choices" => [{ "text" => "Hello response!" }] }]
 
     Simple::Openai::SimpleTextResponseStrategy.stub :new, strategy do
@@ -79,6 +81,8 @@ class MainTest < Minitest::Test
       end
     end
   end
+  # rubocop:enable Metrics/AbcSize
+  # rubocop:enable Metrics/MethodLength
 
   def test_invalid_choice
     input = StringIO.new("invalid\nEXIT\n")

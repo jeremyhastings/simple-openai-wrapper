@@ -10,6 +10,7 @@ module Simple
     # This class provides an interactive console application that allows users
     # to generate text using OpenAI's API.
     class Main
+      # rubocop:disable all
       # Entry point for the Simple OpenAI Wrapper Console Application.
       # It displays a welcome message, presents a menu of options, and handles
       # user input in a loop until the user chooses to exit.
@@ -31,7 +32,7 @@ module Simple
             prompt = prompt_user_for_text
             response = wrapper.generate_text(prompt)
             strategy = Simple::Openai::SimpleTextResponseStrategy.new
-            renderer.set_strategy(strategy)
+            renderer.apply_strategy(strategy)
             renderer.render_response(response)
           when "EXIT", "exit"
             puts "Shutting down the application. Goodbye!"
@@ -41,6 +42,7 @@ module Simple
           end
         end
       end
+      # rubocop:enable all
 
       # Prompts the user to enter a text prompt for generating text.
       # @return [String] the user's text prompt.

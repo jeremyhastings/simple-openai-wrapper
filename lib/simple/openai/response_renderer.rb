@@ -29,7 +29,7 @@ module Simple
       #
       # @param [Object] new_strategy The new strategy to be used for rendering responses.
       # @return [void]
-      def set_strategy(new_strategy)
+      def apply_strategy(new_strategy)
         # Perform any validation or additional logic here if needed
         @strategy = new_strategy
       end

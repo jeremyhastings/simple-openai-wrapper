@@ -11,6 +11,8 @@ module Simple
       # The base URL for OpenAI API requests
       OPENAI_API_URL = "https://api.openai.com/v1/chat/completions"
 
+      # rubocop:disable Metrics/AbcSize
+      # rubocop:disable Metrics/MethodLength
       # Generates text based on the provided prompt by making a request to the OpenAI API.
       #
       # @param [String] prompt The prompt text to be sent to the OpenAI API.
@@ -40,6 +42,8 @@ module Simple
 
         JSON.parse(response.body)
       end
+      # rubocop:enable Metrics/AbcSize
+      # rubocop:enable Metrics/MethodLength
     end
   end
 end
