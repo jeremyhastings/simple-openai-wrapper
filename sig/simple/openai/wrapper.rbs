@@ -3,8 +3,24 @@ module Simple
     VERSION: String
 
     class Wrapper
+      AUTHORIZATION: String
+      CONTENT_TYPE: String
+      DEFAULT_MODEL: String
+      DEFAULT_SYSTEM_MESSAGE: String
       OPENAI_API_URL: String
+      SYSTEM_ROLE: String
+
+      USER_ROLE: String
+
       def generate_text: (String) -> Hash[String, untyped]
+
+      private
+
+      def build_request: -> Net::HTTP::Post
+
+      def parse_response: -> Hash[String, untyped]
+
+      def send_request: -> Net::HTTPResponse
     end
   end
 end
