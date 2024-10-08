@@ -1,0 +1,11 @@
+module Simple
+  module Openai
+    class ResponseRenderer
+      attr_reader strategy: ResponseStrategy
+
+      def apply_strategy: -> ResponseStrategy
+
+      def render_response: -> untyped
+    end
+  end
+end
