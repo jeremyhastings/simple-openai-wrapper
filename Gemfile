@@ -6,7 +6,7 @@ source "https://rubygems.org"
 gemspec
 
 gem "dotenv", "~> 3.1.4"
-gem "minitest", "~> 5.16"
+gem "minitest", "~> 6.0"
 gem "mutex_m"
 gem "rake", "~> 13.0"
 gem "reek"
