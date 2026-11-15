@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Runtime dependencies
-  spec.add_dependency "dotenv", "~> 3.1.4"
+  spec.add_dependency "dotenv", "~> 3.2.0"
   spec.add_dependency "httparty", "~> 0.18"
   spec.add_dependency "json", "~> 2.5"
 
